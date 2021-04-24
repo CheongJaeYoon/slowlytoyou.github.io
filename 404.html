@@ -6,9 +6,11 @@
             // This text is simply to make sure the 404.html file is bigger than 512 bytes, else, internet explorer will ignore it.
             // Thank you internet explorer for requiring such awesome workarounds in order to work properly
             // ====================================================================================================================
-            const path = window.location.pathname.slice(1);
-            localStorage.setItem('path', path);
-            window.location.href='../';
+            if(!localStorage.getItem('path')){
+                const path = window.location.pathname.slice(1);
+                localStorage.setItem('path', path);
+                window.location.href='../';
+            }
         </script>
     </head>
 </html>
